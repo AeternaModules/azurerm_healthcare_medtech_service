@@ -1,3 +1,7 @@
+output "healthcare_medtech_services_id" {
+  description = "Map of id values across all healthcare_medtech_services, keyed the same as var.healthcare_medtech_services"
+  value       = { for k, v in azurerm_healthcare_medtech_service.healthcare_medtech_services : k => v.id }
+}
 output "healthcare_medtech_services_device_mapping_json" {
   description = "Map of device_mapping_json values across all healthcare_medtech_services, keyed the same as var.healthcare_medtech_services"
   value       = { for k, v in azurerm_healthcare_medtech_service.healthcare_medtech_services : k => v.device_mapping_json }
